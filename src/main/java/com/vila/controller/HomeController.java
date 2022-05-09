@@ -1,26 +1,14 @@
-package com.vila.Controllers;
+package com.vila.controller;
 
 import org.springframework.stereotype.Controller;
-
 import org.springframework.web.bind.annotation.GetMapping;
-
 
 @Controller
 public class HomeController {
-
 	
-	
-	@GetMapping("/inici")
+	@GetMapping
 	public String Inicio() {
-		return "alunnos";
+		return "inicio";
 	}
-	
-	
-	@GetMapping("/alumnos")
-	public String ListarAlumnos() {
-		return "alumnos";
-	}
-	
-	
-	
+
 }

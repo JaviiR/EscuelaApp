@@ -1,4 +1,4 @@
-package com.vila.escuela;
+package com.vila;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
