@@ -1,7 +1,7 @@
 package com.vila.Controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -10,9 +10,8 @@ public class HomeController {
 
 	
 	
-	@GetMapping("/")
+	@GetMapping("/inici")
 	public String Inicio() {
-	
 		return "alunnos";
 	}
 	
