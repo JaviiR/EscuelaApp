@@ -1,0 +1,93 @@
+
+html ,body{
+	
+	background-color: black;
+	margin: 0;
+	padding: 0;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.9;
+	background-size: cover;
+	
+}
+*{
+	box-sizing: border-box;
+	
+}
+
+
+.rowes{
+	padding: auto;
+	display: grid;
+	place-items: center;
+}
+#columna_alumno{
+	
+	width: fit-content;
+	margin: auto;
+	
+}
+.columna_profesor{
+	
+	width: fit-content;
+	margin: auto;	
+}
+
+form{
+	width:205px;
+	margin: auto;
+}
+label{
+	width:70px;
+	color: black;
+}
+#GET-name{
+	width:max-content;
+	
+}
+#filtrar{
+	width:80px;
+}
+#verTodos{
+	width:120px;
+}
+#titulo_filtro{
+	width: 500px;
+	text-align: center;
+}
+#division{
+	width:505px;
+	margin:auto;
+}
+h1{
+	color: red;
+}
+
+#formulario_filtro{
+	width: max-content;
+}
+#centrar{
+	width: fit-content;
+	margin: auto;
+}
+#div_nombre{
+	margin-bottom: 7px;
+}
+#titulo_alumnos{
+	font-size: 36px;
+	font-weight: bold;
+}
+#titulo_profesores{
+	font-size: 36px;
+	font-weight: bold;
+}
+
+
+a{
+	text-decoration: none; 
+    
+}
+#AGREGAR{
+	margin-left: 97px;
+}
