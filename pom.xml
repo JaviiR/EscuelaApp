@@ -14,7 +14,7 @@
 	<name>escuela</name>
 	<description>Creando un proyecto con spring boot desde cero</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>17.0.2</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
