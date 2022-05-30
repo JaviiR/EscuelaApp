@@ -14,9 +14,11 @@ import java.util.ArrayList;
 import com.vila.Clases.Separador;
 import com.vila.model.*;
 
+import org.springframework.stereotype.Service;
 
 
 
+@Service
 public class VacantesServiceImpl  implements IVacantesService{
     
 	
@@ -25,6 +27,8 @@ public class VacantesServiceImpl  implements IVacantesService{
 	private Separador s=new Separador();
     private List<Alumno> alumno=null;
 	private List<Profesor> profe=null;
+	private List<Alumno> alumnoFiltro=null;
+	private List<Profesor> profeFiltro=null;
 	//CONSTRUCTOR
 	public VacantesServiceImpl(){
 		ListarAlumnos();
@@ -43,6 +47,18 @@ public List<Alumno> buscarTodosAlumnos() {
 public List<Profesor> buscartodosProfesores() {
 	return profe;
 }
+
+@Override
+public List<Alumno> buscarAlumno(String nomAlum) {
+	
+	return FiltroAlumno(nomAlum);
+}
+
+@Override
+public List<Profesor> buscarProfesor(String nomProfe) {
+	return FiltroProfe(nomProfe);
+}
+
 
 
 // ================================================================BASES DE DATOS================================================================================
@@ -75,6 +91,31 @@ public List<Profesor> buscartodosProfesores() {
 	
 	
 	//=======================================================SEPARANDO NOMBRE Y APELLIDOS DE LOS ALUMNOS=============================================================
+		// CREANDO UNA LISTA SEPARANDO SOLO LOS NOMBRES DE LOS ALUMNOS
+		/*private List<String> NombresAlumnos() {
+			List<String> nombre = new ArrayList<>();
+			for (String cadena : alumnos()) {
+				int contador = 0;
+				// (1)List<String> letras = new ArrayList<>();//lista para comprobar el contador
+				for (int i = 1; i <= cadena.length(); i++) {
+					String l = cadena.substring(i - 1, i);
+					if (!l.equals(" ")) {
+						// (1)letras.add(l);//probando si el contador esta dando la cantidad correcta
+						contador += 1;
+					} else if (l.equals(" ")) {
+						break;
+					}
+
+				}
+
+				// (1)System.out.println(letras);
+				// (1)System.out.println(contador);
+				nombre.add(cadena.substring(0, contador));
+
+			}
+
+			return nombre;
+		}*/
 		
 		public List<String> NombresAlumnos(){
 			return s.ObtenerNombre(alumnos());
@@ -104,14 +145,14 @@ public List<Profesor> buscartodosProfesores() {
 				
 		//CREANDO UNA LISTA FILTRADA POR EL NOMBRE DEL ALUMNO
 				private List<Alumno> FiltroAlumno(String nomAlum){
-					List<Alumno> alumnos=new ArrayList<>();
+					alumnoFiltro=new ArrayList<>();
 					for(int i=0;i<ListarAlumnos().size();i++) {
 						String nombre=NombresAlumnos().get(i).toString();
 						if(nomAlum.equalsIgnoreCase(nombre)) {
-							alumnos.add(ListarAlumnos().get(i));
+							alumnoFiltro.add(ListarAlumnos().get(i));
 						}
 					}
-					return alumnos;
+					return alumnoFiltro;
 				}
 		//=======================================================SEPARANDO NOMBRE Y APELLIDOS DE LOS PROFESORES=================================================
 		// CREANDO UNA LISTA SEPARANDO SOLO LOS NOMBRES DE LOS PROFESORES
@@ -142,14 +183,14 @@ public List<Profesor> buscartodosProfesores() {
 		
 				//CREANDO UNA LISTA FILTRADA POR EL NOMBRE DEL PROFESOR
 				private List<Profesor> FiltroProfe(String nomProfe){
-					List<Profesor> profesores=new ArrayList<>();
+					profeFiltro=new ArrayList<>();
 					for(int i=0;i<ListarProfesores().size();i++) {
 						String nombre=NombresProfesores().get(i).toString();
 						if(nomProfe.equalsIgnoreCase(nombre)) {
-							profesores.add(ListarProfesores().get(i));
+							profeFiltro.add(ListarProfesores().get(i));
 						}
 					}
-					return profesores;
+					return profeFiltro;
 				}
 
 
