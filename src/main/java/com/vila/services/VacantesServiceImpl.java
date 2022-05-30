@@ -1,19 +1,9 @@
 package com.vila.services;
 
 import java.util.List;
-
-
-
-
-
 import java.util.ArrayList;
-
-
-
-
 import com.vila.Clases.Separador;
 import com.vila.model.*;
-
 import org.springframework.stereotype.Service;
 
 
