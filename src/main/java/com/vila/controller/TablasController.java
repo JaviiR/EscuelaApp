@@ -1,6 +1,6 @@
 package com.vila.controller;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,33 +52,6 @@ Separador s=new Separador();
 
 	
 	
-	// ================================================================BASES DE DATOS================================================================================
-	// SIMULANDO UNA BASE DE DATOS PARA ALUMNOS XD
-	private List<String> alumnos() {
-		List<String> nombres = new ArrayList<>();
-		nombres.add("Juan Perez");
-		nombres.add("Pepe Galvez");
-		nombres.add("Tito Rios");
-		nombres.add("Nelly Gonzales");
-		nombres.add("Pedro Maldini");
-		nombres.add("Gilberto Cruz");
-		nombres.add("Piter MacKay");
-		nombres.add("Jaimito Raval");
-		return nombres;
-	}
-
-	// SIMULANDO UNA BASE DE DATOS PARA PROFESORES XD
-	private List<String> profesores() {
-		List<String> nombres = new ArrayList<>();
-		nombres.add("Joe Fatheree");
-		nombres.add("Richard Johnson");
-		nombres.add("Aqueela Asifi");
-		nombres.add("Robin Chaurasiya");
-		nombres.add("Colin Hegarty");
-		nombres.add("Ayub Mohamud");
-		nombres.add("Maarit Rossi");
-		return nombres;
-	}
 	
 	
 }
