@@ -20,18 +20,20 @@
     <br>
     <br>
     <table class="table table-success table-striped">
-        <thead>
+        <thead >
             <tr>
                 
                 <th>NOMBRE</th>
                 <th>APELLIDO</th>
+                <th>OPCIONES</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="alumno : ${alumnos}">
                 
-                <td th:text="${alumno.nombre}"></td>
-                <td th:text="${alumno.apellido}"></td>
+                <td style="width:43%; margin:0px;" th:text="${alumno.nombre}"></td>
+                <td style="width:43%; margin:0px;" th:text="${alumno.apellido}"></td>
+                <td style="width:14%; margin:0px;"><a class="btn btn-link"  th:href="@{/Alumno/view/{name} (name=${alumno.nombre})}">Detalle</a><button class="btn btn-danger" >Eliminar</button></td>
             </tr>
            
         </tbody>

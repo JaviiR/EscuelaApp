@@ -1,4 +1,5 @@
 package com.vila.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ public class TablasController {
 	@GetMapping("Lista/alumnos") // METODO QUE LISTA TODOS LOS ALUMNOS DE LA BASE DE DATOS XD
 	public String MostrarAlumnos(Model model) {
 		model.addAttribute("alumnos", servicioV.buscarTodosAlumnos());
+		
 		return "alumnos";
 	}
 
@@ -29,9 +31,9 @@ public class TablasController {
 	@GetMapping("Lista/alumnos/filtro") // METODO QUE LISTA UN ALUMNO EN ESPECIFICADO SEGUN EL NOMBRE
 	public String FiltrarAlumno(Model model, @RequestParam String nombre) {
 		model.addAttribute("alumnos", servicioV.buscarAlumno(nombre));
-		if(servicioV.buscarAlumno(nombre).size()>0){
-		return "alumnos";
-		}else{
+		if (servicioV.buscarAlumno(nombre).size() > 0) {
+			return "alumnos";
+		} else {
 			model.addAttribute("Todos", "/Lista/alumnos");
 			model.addAttribute("titulo", "NOMBRE DEL ALUMNO");
 			return "filter";
@@ -41,12 +43,12 @@ public class TablasController {
 	@GetMapping("Lista/profesores/filtro") // METODO QUE LISTA UN PROFESOR EN ESPECIFICO SEGUN EL NOMBRE
 	public String FiltrarProfesor(Model model, @RequestParam String nombre) {
 		model.addAttribute("profes", servicioV.buscarProfesor(nombre));
-		if(servicioV.buscarProfesor(nombre).size()>0){
-		return "listaProfesores";
-		}else{
-		model.addAttribute("Todos", "/Lista/profesores");
-		model.addAttribute("titulo", "NOMBRE DEL PROFESOR");
-		return "filter";
+		if (servicioV.buscarProfesor(nombre).size() > 0) {
+			return "listaProfesores";
+		} else {
+			model.addAttribute("Todos", "/Lista/profesores");
+			model.addAttribute("titulo", "NOMBRE DEL PROFESOR");
+			return "filter";
 		}
 	}
 
