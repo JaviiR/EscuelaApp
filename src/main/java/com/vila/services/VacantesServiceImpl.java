@@ -19,6 +19,7 @@ public class VacantesServiceImpl  implements IVacantesService{
 	private List<Profesor> profe=null;
 	private List<Alumno> alumnoFiltro=null;
 	private List<Profesor> profeFiltro=null;
+	private Alumno Objalumno=new Alumno();
 	//CONSTRUCTOR
 	public VacantesServiceImpl(){
 		ListarAlumnos();
@@ -49,7 +50,20 @@ public List<Profesor> buscarProfesor(String nomProfe) {
 	return FiltroProfe(nomProfe);
 }
 
+@Override
+public Alumno ObtenerAlumno(String nomAlum) {
+	
+		Objalumno.setNombre(FiltroAlumno(nomAlum).get(0).getNombre().toString());
+		Objalumno.setApellido(FiltroAlumno(nomAlum).get(0).getApellido().toString());
 
+	return Objalumno;
+}
+
+@Override
+public Profesor ObtenerProfe(String nomProfe) {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 // ================================================================BASES DE DATOS================================================================================
 	// SIMULANDO UNA BASE DE DATOS PARA ALUMNOS XD
@@ -185,7 +199,13 @@ public List<Profesor> buscarProfesor(String nomProfe) {
 
 
 
-
+				public static void main(String[] args) {
+					VacantesServiceImpl v=new VacantesServiceImpl();
+					//pruebas
+					System.out.println("Nombre: "+v.ObtenerAlumno("Juan").getNombre());
+					System.out.println("Apellido: "+v.ObtenerAlumno("Juan").getApellido());
+					
+				}
 
     
 }

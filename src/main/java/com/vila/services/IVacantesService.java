@@ -12,5 +12,6 @@ public interface IVacantesService {
     List<Profesor> buscartodosProfesores();
     List<Alumno> buscarAlumno(String nomAlum);
     List<Profesor> buscarProfesor(String nomProfe);
-
+    Alumno ObtenerAlumno(String nomAlum);
+    Profesor ObtenerProfe(String nomProfe);
 }
