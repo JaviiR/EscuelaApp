@@ -19,20 +19,20 @@ public class TablasController {
 	public String MostrarAlumnos(Model model) {
 		model.addAttribute("alumnos", servicioV.buscarTodosAlumnos());
 		
-		return "alumnos";
+		return "tables/alumnos";
 	}
 
 	@GetMapping("Lista/profesores") // METODO QUE LISTA TODOS LOS PROFESORES DE LA BASE DE DATOS XD
 	public String MostrarProfesores(Model model) {
 		model.addAttribute("profes", servicioV.buscartodosProfesores());
-		return "listaProfesores";
+		return "tables/listaProfesores";
 	}
 
 	@GetMapping("Lista/alumnos/filtro") // METODO QUE LISTA UN ALUMNO EN ESPECIFICADO SEGUN EL NOMBRE
 	public String FiltrarAlumno(Model model, @RequestParam String nombre) {
 		model.addAttribute("alumnos", servicioV.buscarAlumno(nombre));
 		if (servicioV.buscarAlumno(nombre).size() > 0) {
-			return "alumnos";
+			return "tables/alumnos";
 		} else {
 			model.addAttribute("Todos", "/Lista/alumnos");
 			model.addAttribute("titulo", "NOMBRE DEL ALUMNO");
@@ -44,7 +44,7 @@ public class TablasController {
 	public String FiltrarProfesor(Model model, @RequestParam String nombre) {
 		model.addAttribute("profes", servicioV.buscarProfesor(nombre));
 		if (servicioV.buscarProfesor(nombre).size() > 0) {
-			return "listaProfesores";
+			return "tables/listaProfesores";
 		} else {
 			model.addAttribute("Todos", "/Lista/profesores");
 			model.addAttribute("titulo", "NOMBRE DEL PROFESOR");

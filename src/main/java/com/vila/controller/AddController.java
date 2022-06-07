@@ -18,12 +18,12 @@ public class AddController {
     @GetMapping("/form/alumno")
     public String AddAlumno(Model model){
         model.addAttribute("LinkAgregado", "/alumnos/agregado");
-        return "addAlumno";
+        return "add/addAlumno";
     }
 
     @GetMapping("/form/profesor")
     public String AddProfesor(){
-        return "addProfesor";
+        return "add/addProfesor";
     }
 
     @PostMapping("/alumnos/agregado")
@@ -41,7 +41,7 @@ public class AddController {
         
         System.out.println("Nombre: "+NombreAlumn);
         System.out.println("Apellido: "+ApellidoAlumn);
-        return "addSuccess";
+        return "add/addSuccess";
         }
 }
 
